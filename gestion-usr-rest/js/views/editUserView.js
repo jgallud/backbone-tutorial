@@ -4,7 +4,7 @@ UserMan.Views.EditUserView = Backbone.View.extend({
       el:'.page', 
       initialize: function(options){      
         //_.bindAll(this, "render");
-        this.render(options.numObj);
+       // this.render(options.numObj);
       },
       render: function(id){
         //4-a para probar
