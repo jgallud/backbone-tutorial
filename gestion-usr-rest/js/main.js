@@ -6,21 +6,22 @@ UserMan.Router = Backbone.Router.extend({
                         "edit/:id":"edit"
                       },
                       default:function(){
+                        usuariosView.collection.fetch({reset:true});
+                        usuariosView.render();
                         //UserMan.users = new UserMan.Collections.Users();
                         //new UserMan.Views.Users({collection:UserMan.users});
-                        usersView.collection.fetch({reset:true});
-                        usersView.render();
+                        //UserMan.users.fetch();
                         //console.log(UserMan.users);
                       },
                       edit:function(id){
-                          editUsersView.render(id);
+                        crearEditarUsuarios.render(id);
                         //new UserMan.Views.EditUserView({numObj:id});
                       }
                   });
 
-var users = new UserMan.Collections.Users();
-var usersView = new UserMan.Views.Users({collection:users});
-var editUsersView = new UserMan.Views.EditUserView();
+var usuarios= new UserMan.Collections.Users();
+var usuariosView = new UserMan.Views.Users({collection:usuarios});
+var crearEditarUsuarios = new UserMan.Views.EditUserView();
 
 var router = new UserMan.Router();
 Backbone.history.start();
